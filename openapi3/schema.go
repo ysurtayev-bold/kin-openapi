@@ -155,6 +155,9 @@ type Schema struct {
 	AdditionalPropertiesAllowed *bool          `multijson:"additionalProperties,omitempty" json:"-" yaml:"-"` // In this order...
 	AdditionalProperties        *SchemaRef     `multijson:"additionalProperties,omitempty" json:"-" yaml:"-"` // ...for multijson
 	Discriminator               *Discriminator `json:"discriminator,omitempty" yaml:"discriminator,omitempty"`
+
+	// Proto-compatible
+	ProtoNumber uint64 `json:"protoNumber,omitempty" yaml:"protoNumber,omitempty"`
 }
 
 var _ jsonpointer.JSONPointable = (*Schema)(nil)
