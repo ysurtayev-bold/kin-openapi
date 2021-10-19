@@ -99,6 +99,9 @@ type Parameter struct {
 	Example         interface{} `json:"example,omitempty" yaml:"example,omitempty"`
 	Examples        Examples    `json:"examples,omitempty" yaml:"examples,omitempty"`
 	Content         Content     `json:"content,omitempty" yaml:"content,omitempty"`
+
+	// Proto-compatible
+	ProtoNumber uint64 `json:"protoNumber,omitempty" yaml:"protoNumber,omitempty"`
 }
 
 var _ jsonpointer.JSONPointable = (*Parameter)(nil)
