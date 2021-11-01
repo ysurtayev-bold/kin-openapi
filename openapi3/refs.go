@@ -221,6 +221,9 @@ func (value RequestBodyRef) JSONLookup(token string) (interface{}, error) {
 type SchemaRef struct {
 	Ref   string
 	Value *Schema
+
+	// Proto-compatible
+	ProtoNumber uint64 `json:"protoNumber,omitempty" yaml:"protoNumber,omitempty"`
 }
 
 var _ jsonpointer.JSONPointable = (*SchemaRef)(nil)
