@@ -24,7 +24,7 @@ func (value *CallbackRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *CallbackRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *CallbackRef) Validate(ctx context.Context) error {
@@ -55,7 +55,7 @@ func (value *ExampleRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *ExampleRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *ExampleRef) Validate(ctx context.Context) error {
@@ -86,7 +86,7 @@ func (value *HeaderRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *HeaderRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *HeaderRef) Validate(ctx context.Context) error {
@@ -115,7 +115,7 @@ func (value *LinkRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *LinkRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *LinkRef) Validate(ctx context.Context) error {
@@ -140,7 +140,7 @@ func (value *ParameterRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *ParameterRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.ProtoNumber, &value.Value)
 }
 
 func (value *ParameterRef) Validate(ctx context.Context) error {
@@ -171,7 +171,7 @@ func (value *ResponseRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *ResponseRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *ResponseRef) Validate(ctx context.Context) error {
@@ -202,7 +202,7 @@ func (value *RequestBodyRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *RequestBodyRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *RequestBodyRef) Validate(ctx context.Context) error {
@@ -243,7 +243,7 @@ func (value *SchemaRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *SchemaRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.ProtoNumber, &value.Value)
 }
 
 func (value *SchemaRef) Validate(ctx context.Context) error {
@@ -274,7 +274,7 @@ func (value *SecuritySchemeRef) MarshalJSON() ([]byte, error) {
 }
 
 func (value *SecuritySchemeRef) UnmarshalJSON(data []byte) error {
-	return jsoninfo.UnmarshalRef(data, &value.Ref, &value.Value)
+	return jsoninfo.UnmarshalRef(data, &value.Ref, nil, &value.Value)
 }
 
 func (value *SecuritySchemeRef) Validate(ctx context.Context) error {

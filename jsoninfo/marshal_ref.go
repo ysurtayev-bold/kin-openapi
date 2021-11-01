@@ -13,12 +13,13 @@ func MarshalRef(value string, otherwise interface{}) ([]byte, error) {
 	return json.Marshal(otherwise)
 }
 
-func UnmarshalRef(data []byte, destRef *string, destOtherwise interface{}) error {
+func UnmarshalRef(data []byte, destRef *string, protoNumber *uint64, destOtherwise interface{}) error {
 	refProps := &refProps{}
 	if err := json.Unmarshal(data, refProps); err == nil {
 		ref := refProps.Ref
 		if len(ref) > 0 {
 			*destRef = ref
+			*protoNumber = refProps.ProtoNumber
 			return nil
 		}
 	}
@@ -27,4 +28,7 @@ func UnmarshalRef(data []byte, destRef *string, destOtherwise interface{}) error
 
 type refProps struct {
 	Ref string `json:"$ref,omitempty"`
+
+	// Proto-compatible
+	ProtoNumber uint64 `json:"protoNumber,omitempty" yaml:"protoNumber,omitempty"`
 }
