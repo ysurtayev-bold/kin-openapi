@@ -128,6 +128,9 @@ func (value *LinkRef) Validate(ctx context.Context) error {
 type ParameterRef struct {
 	Ref   string
 	Value *Parameter
+
+	// Proto-compatible
+	ProtoNumber uint64 `json:"protoNumber,omitempty" yaml:"protoNumber,omitempty"`
 }
 
 var _ jsonpointer.JSONPointable = (*ParameterRef)(nil)
